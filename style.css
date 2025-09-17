@@ -1,0 +1,47 @@
+body {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(135deg, #175e11, #109632);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+.tech-logo {
+    max-height: 50px;
+    margin: 10px;
+}
+
+@media (min-width: 992px) {
+    .carousel-item img {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}

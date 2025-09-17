@@ -2,273 +2,238 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Gestão de Temporada - Saquarema</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./src/img/favicon.png">
+    <title>Sistema de Gestão de Temporada - Saquarema</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    header {
-      background: linear-gradient(135deg, #0d6efd, #0a58ca);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .card {
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    footer {
-      background: #f8f9fa;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    .tech-logo {
-      max-height: 50px;
-      margin: 10px;
-    }
-
-    /* Ajustes nos quadradinhos (indicadores do carrossel) */
-    .carousel-indicators {
-      margin-top: 30px !important;
-    }
-
-    .carousel-indicators [data-bs-target] {
-      background-color: black !important;
-    }
-
-    /* Imagens menores em desktop */
-    @media (min-width: 992px) {
-      .carousel-item img {
-        max-width: 70%;
-        margin: 0 auto;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#inicio">Sistema de Gestão para aluguel de Temporada</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#prints">Prints</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#video">Vídeo</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="inicio">
-    <div class="container">
-      <h1>Sistema de Gestão de Casa de Temporada</h1>
-      <p class="lead mt-3">Gestão completa para aluguel de temporada em Saquarema: do contrato ao fluxo de caixa.</p>
-      <a href="#video" class="btn btn-light btn-lg mt-4">Veja a Demonstração</a>
-    </div>
-  </header>
-
-  <!-- Funcionalidades -->
-  <section id="funcionalidades">
-    <div class="container">
-      <h2 class="text-center mb-5">Funcionalidades</h2>
-      <div class="row g-4">
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Login</h5>
-              <p class="card-text">Autenticação segura com recuperação de senha via e-mail (SMTP).</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">Sistema SaquaStraub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prints">Prints</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">Vídeo</a></li>
+                </ul>
             </div>
-          </div>
         </div>
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Dashboards Dinâmicas</h5>
-              <p class="card-text">Visualização de contratos, clientes e reclamações.</p>
+    </nav>
+
+    <!-- Hero -->
+    <header id="inicio">
+        <div class="container">
+            <h1>Sistema de Gestão de Casa de Temporada</h1>
+            <p class="lead mt-3">Gestão completa para aluguel de temporada em Saquarema: do contrato ao fluxo de caixa.
+            </p>
+            <a href="#video" class="btn btn-light btn-lg mt-4">Veja a Demonstração</a>
+        </div>
+    </header>
+
+    <!-- Funcionalidades -->
+    <section id="funcionalidades">
+        <div class="container">
+            <h2 class="text-center mb-5">Funcionalidades</h2>
+            <div class="row g-4">
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Login</h5>
+                            <p class="card-text">Autenticação segura com recuperação de senha via e-mail (SMTP).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboards Dinâmicas</h5>
+                            <p class="card-text">Visualização de contratos, clientes e reclamações.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Calendário Editável</h5>
+                            <p class="card-text">Controle visual do status da casa: livre, alugada, manutenção ou uso
+                                familiar.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Calendário Editável</h5>
-              <p class="card-text">Controle visual do status da casa: livre, alugada, manutenção ou uso familiar.</p>
+            <div class="row g-4 mt-3">
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Fluxo de Saídas</h5>
+                            <p class="card-text">Cadastro e consulta de despesas da casa de forma prática e organizada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Relatório Financeiro</h5>
+                            <p class="card-text">Lucro bruto – saídas = líquido, com filtros por temporada e gráficos em
+                                área.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="cursor: pointer;">
+                    <div class="card h-100 text-center p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Ranking de Clientes</h5>
+                            <p class="card-text">Top 5 clientes com mais contratos para otimizar estratégias de
+                                marketing.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="row g-4 mt-3">
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Fluxo de Saídas</h5>
-              <p class="card-text">Cadastro e consulta de despesas da casa de forma prática e organizada.</p>
+    </section>
+
+    <!-- Prints -->
+    <section id="prints" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Prints do Sistema</h2>
+
+            <div id="printsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./src/img/0.png" class="d-block w-100" alt="Tela de Login">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/1.png" class="d-block w-100" alt="Tela de Cadastro">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/2.png" class="d-block w-100" alt="Tela de Recuperação de Senha">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/3.png" class="d-block w-100" alt="Ranking Clientes">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/4.png" class="d-block w-100" alt="Informações da Casa">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/5.png" class="d-block w-100" alt="Cadastro Cliente">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/6.png" class="d-block w-100" alt="Consulta Cliente">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/7.png" class="d-block w-100" alt="Visualizar Cliente">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/8.png" class="d-block w-100" alt="Cadastro Contrato">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/9.png" class="d-block w-100" alt="Consulta Contrato">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/10.png" class="d-block w-100" alt="Cadastro Reclamações">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/11.png" class="d-block w-100" alt="Consulta Reclamações">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/12.png" class="d-block w-100" alt="Cadastro/Consulta">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/13.png" class="d-block w-100" alt="Fluxo Mensal">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/14.png" class="d-block w-100" alt="Gráfico Área">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/15.png" class="d-block w-100" alt="Fluxo Temporada">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./src/img/16.png" class="d-block w-100" alt="Gráfico Temporada">
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Relatório Financeiro</h5>
-              <p class="card-text">Lucro bruto – saídas = líquido, com filtros por temporada e gráficos em área.</p>
+    </section>
+
+    <!-- Tecnologias -->
+    <section id="tecnologias">
+        <div class="container text-center">
+            <h2 class="mb-5">Tecnologias Utilizadas</h2>
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" class="tech-logo img-fluid"
+                        alt="Node.js">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="https://static.cdnlogo.com/logos/m/10/mysql.svg" class="tech-logo img-fluid" alt="MySQL">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                        class="tech-logo img-fluid" alt="Vue.js">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" class="tech-logo img-fluid"
+                        alt="Bootstrap">
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4"  style="cursor: pointer;">
-          <div class="card h-100 text-center p-3">
-            <div class="card-body">
-              <h5 class="card-title">Ranking de Clientes</h5>
-              <p class="card-text">Top 5 clientes com mais contratos para otimizar estratégias de marketing.</p>
+    </section>
+
+
+    <!-- Vídeo -->
+    <section id="video" class="bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Demonstração Completa</h2>
+            <div class="ratio ratio-16x9">
+                <video controls>
+                    <source src="./src/video.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeo.
+                </video>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Prints -->
-  <section id="prints" class="bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5">Prints do Sistema</h2>
-
-      <div id="printsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-
-        <!-- Slides -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./src/img/0.png" class="d-block w-100" alt="Tela de Login">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/1.png" class="d-block w-100" alt="Tela de Cadastro">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/2.png" class="d-block w-100" alt="Tela de Recuperação de Senha">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/3.png" class="d-block w-100" alt="Ranking Clientes">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/4.png" class="d-block w-100" alt="Informações da Casa">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/5.png" class="d-block w-100" alt="Cadastro Cliente">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/6.png" class="d-block w-100" alt="Consulta Cliente">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/7.png" class="d-block w-100" alt="Visualizar Cliente">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/8.png" class="d-block w-100" alt="Cadastro Contrato">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/9.png" class="d-block w-100" alt="Consulta Contrato">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/10.png" class="d-block w-100" alt="Cadastro Reclamações">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/11.png" class="d-block w-100" alt="Consulta Reclamações">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/12.png" class="d-block w-100" alt="Cadastro/Consulta">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/13.png" class="d-block w-100" alt="Fluxo Mensal">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/14.png" class="d-block w-100" alt="Gráfico Área">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/15.png" class="d-block w-100" alt="Fluxo Temporada">
-          </div>
-
-          <div class="carousel-item">
-            <img src="./src/img/16.png" class="d-block w-100" alt="Gráfico Temporada">
-          </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">Desenvolvido por <strong>Lucas Straub</strong> – 2025</p>
+            <p class="small mb-0">Sistema de Gestão de Temporada • Saquarema</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Tecnologias -->
-  <section id="tecnologias">
-    <div class="container text-center">
-      <h2 class="mb-5">Tecnologias Utilizadas</h2>
-      <div>
-        <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" class="tech-logo" alt="Node.js">
-        <img src="https://static.cdnlogo.com/logos/m/10/mysql.svg" class="tech-logo" alt="MySQL">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="tech-logo" alt="Vue.js">
 
-        <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" class="tech-logo" alt="Bootstrap">
-      </div>
-    </div>
-  </section>
-
-  <!-- Vídeo -->
-  <section id="video" class="bg-light">
-    <div class="container text-center">
-      <h2 class="mb-5">Demonstração Completa</h2>
-      <div class="ratio ratio-16x9">
-        <video controls>
-          <source src="./src/video.mp4" type="video/mp4">
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Desenvolvido Lucas Straub – 2025</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
