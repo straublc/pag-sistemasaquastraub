@@ -4,246 +4,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sistema de Gestão de Casa de Temporada em Saquarema — contratos, fluxo de caixa, calendário e relatórios financeiros." />
+  <meta name="description" content="SaquaStraub — sistema de gestão de casa de temporada em Saquarema: contratos, cobrança, financeiro, operação das casas e auditoria." />
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="./src/img/favicon.png" />
-  <title>Sistema de Gestão de Temporada · Saquarema</title>
+  <title>SaquaStraub · Gestão de Temporada</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- ── Navbar ── -->
+  <!-- ── Navegação ── -->
   <nav class="nav" id="navbar" aria-label="Navegação principal">
     <div class="nav__inner">
       <a class="nav__brand" href="#inicio" aria-label="Ir para o início">
-        <span class="nav__brand-icon" aria-hidden="true"></span>
+        <img class="nav__mark" src="./src/img/logo-mark@2x.png"
+          srcset="./src/img/logo-mark@1x.png 1x, ./src/img/logo-mark@2x.png 2x, ./src/img/logo-mark@3x.png 3x"
+          width="40" height="32" alt="" decoding="async" />
         SaquaStraub
       </a>
 
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
+        <span></span><span></span>
       </button>
 
       <ul class="nav__menu" id="navMenu" role="list">
-        <li><a class="nav__link" href="#inicio">Início</a></li>
+        <li><a class="nav__link" href="#evolucao">Evolução</a></li>
         <li><a class="nav__link" href="#funcionalidades">Funcionalidades</a></li>
-        <li><a class="nav__link" href="#prints">Prints</a></li>
-        <li><a class="nav__link" href="#tecnologias">Tecnologias</a></li>
-        <li><a class="nav__link nav__link--cta" href="#video">Ver Demo</a></li>
+        <li><a class="nav__link" href="#arquitetura">Arquitetura</a></li>
+        <li><a class="nav__link" href="#stack">Stack</a></li>
+        <li><a class="nav__cta" href="#evolucao">Ver demo</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ── Hero ── -->
   <header id="inicio" class="hero">
-    <div class="hero__inner container">
-      <span class="hero__badge">Gestão de Temporada</span>
-      <h1 class="hero__title">Sistema completo para<br />aluguel em <em>Saquarema</em></h1>
-      <p class="hero__sub">Do contrato ao fluxo de caixa tudo num só lugar, simples e rápido.</p>
+    <div class="container hero__inner">
+      <p class="eyebrow">Gestão de casa de temporada · Saquarema</p>
+      <h1 class="display">
+        Do contrato ao caixa.<br />
+        <span class="gradient-text">Tudo num só lugar.</span>
+      </h1>
+      <p class="lead hero__lead">
+        Um sistema completo para administrar aluguel por temporada: clientes, contratos,
+        cobrança, financeiro e a operação diária de cada casa, com auditoria de ponta a ponta.
+      </p>
       <div class="hero__actions">
-        <a href="#video" class="btn btn--primary">Ver Demonstração</a>
-        <a href="#funcionalidades" class="btn btn--ghost">Conhecer Funcionalidades</a>
+        <a href="#evolucao" class="btn btn--primary">Ver a evolução</a>
+        <a href="#funcionalidades" class="btn btn--link">Conhecer as funcionalidades <span aria-hidden="true">›</span></a>
+      </div>
+
+      <dl class="stats" data-reveal>
+        <div class="stat"><dt>Módulos</dt><dd>11</dd></div>
+        <div class="stat"><dt>Funcionalidades</dt><dd>40+</dd></div>
+        <div class="stat"><dt>Front-end</dt><dd>Vue&nbsp;3 + TS</dd></div>
+        <div class="stat"><dt>Back-end</dt><dd>Express&nbsp;5</dd></div>
+      </dl>
+    </div>
+    <div class="hero__glow" aria-hidden="true"></div>
+  </header>
+
+  <!-- ── Evolução ── -->
+  <section id="evolucao" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow eyebrow--sunset">Evolução</p>
+        <h2 class="title">Antes e depois.</h2>
+        <p class="lead">A primeira versão resolvia o básico. A atual foi reconstruída para operar o negócio inteiro.</p>
+      </div>
+
+      <div class="compare" data-reveal>
+        <figure class="compare__item">
+          <figcaption class="compare__label">
+            <span class="tag tag--muted">v1</span>
+            <span>Modelo antigo</span>
+          </figcaption>
+          <div class="video-frame">
+            <video id="videoOld" controls preload="metadata" playsinline>
+              <source src="./src/Video.mp4#t=0.5" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+          </div>
+        </figure>
+
+        <figure class="compare__item compare__item--new">
+          <figcaption class="compare__label">
+            <span class="tag tag--accent">v2</span>
+            <span>Estado atual</span>
+          </figcaption>
+          <div class="video-frame">
+            <video id="videoNew" controls preload="metadata" playsinline>
+              <source src="./src/video-att.mp4#t=0.5" type="video/mp4" />
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+          </div>
+        </figure>
+      </div>
+
+      <div class="compare__sync">
+        <button class="btn btn--secondary" id="syncPlay" type="button" aria-pressed="false">
+          <span class="sync-icon" aria-hidden="true"></span>
+          <span id="syncLabel">Reproduzir lado a lado</span>
+        </button>
+      </div>
+
+      <!-- Tabela de mudanças -->
+      <div class="changes" data-reveal>
+        <div class="changes__head" aria-hidden="true">
+          <span></span>
+          <span>v1 · Antes</span>
+          <span>v2 · Agora</span>
+        </div>
+
+        <div class="change">
+          <h3 class="change__area">Acesso</h3>
+          <p class="change__old">Login com recuperação de senha por e-mail.</p>
+          <p class="change__new">JWT em cookie, bloqueio após tentativas falhas, rate limit e gestão de usuários e perfil.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Contratos</h3>
+          <p class="change__old">Texto do contrato gerado a partir do cadastro.</p>
+          <p class="change__new">Templates, filtros, geração de texto e PDF via Puppeteer.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Cobrança</h3>
+          <p class="change__old">Pagamento à vista ou parcelado.</p>
+          <p class="change__new">Controle de parcelas, pagamentos com concorrência segura, multas e caução.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Financeiro</h3>
+          <p class="change__old">Relatórios por período e por temporada.</p>
+          <p class="change__new">Lançamentos, contas a pagar, categorias, reconciliação, DRE e relatórios avançados.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Operação</h3>
+          <p class="change__old">Calendário com o status da casa.</p>
+          <p class="change__new">Agenda, check-in e saída, checklist, inventário, ocorrências, melhorias e tarefas agendadas.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Painéis</h3>
+          <p class="change__old">Dashboard com totais e top 5 clientes.</p>
+          <p class="change__new">Dashboard, tela “Hoje”, alertas e notificações com varredura periódica.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Auditoria</h3>
+          <p class="change__old change__old--none">—</p>
+          <p class="change__new">Registro das ações em clientes, lançamentos, usuários, contratos e mais.</p>
+        </div>
+        <div class="change">
+          <h3 class="change__area">Infraestrutura</h3>
+          <p class="change__old change__old--none">—</p>
+          <p class="change__new">Migrations, seeds, índices de performance, logger, testes, Docker e deploy no Railway.</p>
+        </div>
       </div>
     </div>
-    <div class="hero__wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg)" />
-      </svg>
-    </div>
-  </header>
+  </section>
 
   <!-- ── Funcionalidades ── -->
   <section id="funcionalidades" class="section">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Funcionalidades</h2>
-        <p class="section__sub">Tudo que você precisa para gerenciar sua casa de temporada.</p>
+        <p class="eyebrow">Funcionalidades</p>
+        <h2 class="title">Onze módulos.<br /><span class="muted">Um fluxo contínuo.</span></h2>
       </div>
-      <div class="features">
 
-        <!-- Login Seguro -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
+      <div class="bento">
+
+        <article class="card card--wide card--feature" data-reveal>
+          <div class="card__icon card__icon--sunset" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
           </div>
-          <h3 class="feature-card__title">Login Seguro</h3>
-          <p class="feature-card__text">Autenticação com recuperação de senha via e-mail (SMTP) e controle de acesso por perfil.</p>
+          <h3 class="card__title">Financeiro</h3>
+          <p class="card__text">O caixa inteiro, do lançamento ao demonstrativo.</p>
+          <ul class="chips">
+            <li>Receitas e despesas</li><li>Contas a pagar</li><li>Categorias de despesa</li>
+            <li>Reconciliação</li><li>DRE</li><li>Relatórios avançados</li>
+          </ul>
         </article>
 
-        <!-- Dashboard Dinâmica -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7" rx="1"/>
-              <rect x="14" y="3" width="7" height="7" rx="1"/>
-              <rect x="3" y="14" width="7" height="7" rx="1"/>
-              <rect x="14" y="14" width="7" height="7" rx="1"/>
-            </svg>
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
           </div>
-          <h3 class="feature-card__title">Dashboard Dinâmica</h3>
-          <p class="feature-card__text">Visão consolidada de líquido, despesas e bruto; reclamações abertas, pendências, próximas reservas e top 5 clientes.</p>
+          <h3 class="card__title">Autenticação e acesso</h3>
+          <ul class="list">
+            <li>Login com JWT em cookie</li><li>Bloqueio após tentativas falhas</li>
+            <li>Rate limit</li><li>Usuários e perfil</li>
+          </ul>
         </article>
 
-        <!-- CRUDs -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="12" y1="18" x2="12" y2="12"/>
-              <line x1="9" y1="15" x2="15" y2="15"/>
-            </svg>
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg>
           </div>
-          <h3 class="feature-card__title">Gestão Completa (CRUD)</h3>
-          <p class="feature-card__text">Clientes, contratos (à vista ou parcelado), despesas, reclamações, inventário e administradores, tudo cadastrado e consultado em um só lugar.</p>
+          <h3 class="card__title">Clientes</h3>
+          <ul class="list">
+            <li>Cadastro de clientes</li><li>Quantidade de contratos</li><li>Total gasto por cliente</li>
+          </ul>
         </article>
 
-        <!-- Financeiro -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
           </div>
-          <h3 class="feature-card__title">Financeiro</h3>
-          <p class="feature-card__text">Relatórios detalhados com buscas otimizadas por período, gráficos e comparativos por temporada.</p>
+          <h3 class="card__title">Contratos</h3>
+          <ul class="list">
+            <li>Criação, filtros e exclusão</li><li>Templates de contrato</li>
+            <li>Geração do texto</li><li>PDF via Puppeteer</li>
+          </ul>
         </article>
 
-        <!-- Calendário -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h2M14 14h2"/></svg>
           </div>
-          <h3 class="feature-card__title">Calendário Personalizado</h3>
-          <p class="feature-card__text">Visualize o andamento da casa dia a dia: livre, alugada, manutenção ou uso familiar, com edição direta no calendário.</p>
+          <h3 class="card__title">Parcelas e pagamentos</h3>
+          <ul class="list">
+            <li>Controle de parcelas</li><li>Pagamentos com concorrência segura</li>
+          </ul>
         </article>
 
-        <!-- Contrato Automático -->
-        <article class="feature-card" data-reveal>
-          <div class="feature-card__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-              <polyline points="13 2 13 9 20 9"/>
-              <path d="m9 15 2 2 4-4"/>
-            </svg>
+        <article class="card" data-reveal>
+          <div class="card__icon card__icon--sunset" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
-          <h3 class="feature-card__title">Contrato Automático</h3>
-          <p class="feature-card__text">Geração automática do contrato de locação a partir dos dados cadastrados pronto para imprimir ou enviar.</p>
+          <h3 class="card__title">Cobrança</h3>
+          <ul class="list">
+            <li>Rotinas e serviço de cobrança</li><li>Multas</li><li>Caução (depósito de garantia)</li>
+          </ul>
+        </article>
+
+        <article class="card card--wide card--feature" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
+          </div>
+          <h3 class="card__title">Operação das casas</h3>
+          <p class="card__text">Da chegada à saída, cada etapa registrada.</p>
+          <ul class="chips">
+            <li>Status das casas</li><li>Agenda</li><li>Check-in e saída</li><li>Checklist</li>
+            <li>Inventário</li><li>Ocorrências</li><li>Reclamações</li><li>Melhorias</li>
+            <li>Tarefas sem sobreposição</li>
+          </ul>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          </div>
+          <h3 class="card__title">Painéis e alertas</h3>
+          <ul class="list">
+            <li>Dashboard</li><li>Tela “Hoje”</li><li>Alertas</li>
+            <li>Notificações com varredura periódica</li>
+          </ul>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          </div>
+          <h3 class="card__title">Documentos e exportação</h3>
+          <ul class="list">
+            <li>Upload via Cloudinary</li><li>Exportação para Excel (ExcelJS)</li>
+          </ul>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="card__title">Auditoria</h3>
+          <p class="card__text">Registro das ações em clientes, lançamentos, usuários, contratos e outros.</p>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          </div>
+          <h3 class="card__title">Infraestrutura</h3>
+          <ul class="list">
+            <li>Migrations e seeds (dev e demo)</li><li>Índices de performance</li>
+            <li>Ambientes separados de dev e produção</li><li>Logger</li><li>Docker e Railway</li>
+          </ul>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ── Prints ── -->
-  <section id="prints" class="section section--alt">
+  <!-- ── Arquitetura ── -->
+  <section id="arquitetura" class="section section--alt">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Prints do Sistema</h2>
-        <p class="section__sub">Veja como é a experiência dentro da plataforma.</p>
+        <p class="eyebrow">Arquitetura</p>
+        <h2 class="title">Como as peças se conectam.</h2>
+        <p class="lead">SPA em Vue consumindo uma API REST em Express, com MySQL como fonte da verdade.</p>
       </div>
 
-      <!-- Carrossel principal -->
-      <div class="carousel" id="carousel" role="region" aria-label="Capturas de tela do sistema" aria-live="polite">
-        <div class="carousel__track" id="carouselTrack">
-          <div class="carousel__slide" role="img" aria-label="Tela de Login"><img src="./src/img/0.png" alt="Tela de Login" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Tela de Cadastro"><img src="./src/img/1.png" alt="Tela de Cadastro" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Recuperação de Senha"><img src="./src/img/2.png" alt="Recuperação de Senha" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Ranking de Clientes"><img src="./src/img/3.png" alt="Ranking de Clientes" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Informações da Casa"><img src="./src/img/4.png" alt="Informações da Casa" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Cadastro de Cliente"><img src="./src/img/5.png" alt="Cadastro de Cliente" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Consulta de Cliente"><img src="./src/img/6.png" alt="Consulta de Cliente" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Visualizar Cliente"><img src="./src/img/7.png" alt="Visualizar Cliente" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Cadastro de Contrato"><img src="./src/img/8.png" alt="Cadastro de Contrato" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Consulta de Contrato"><img src="./src/img/9.png" alt="Consulta de Contrato" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Cadastro de Reclamação"><img src="./src/img/10.png" alt="Cadastro de Reclamação" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Consulta de Reclamações"><img src="./src/img/11.png" alt="Consulta de Reclamações" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Cadastro e Consulta"><img src="./src/img/12.png" alt="Cadastro e Consulta" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Fluxo Mensal"><img src="./src/img/13.png" alt="Fluxo Mensal" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Gráfico de Área"><img src="./src/img/14.png" alt="Gráfico de Área" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Fluxo por Temporada"><img src="./src/img/15.png" alt="Fluxo por Temporada" loading="lazy" /></div>
-          <div class="carousel__slide" role="img" aria-label="Gráfico por Temporada"><img src="./src/img/16.png" alt="Gráfico por Temporada" loading="lazy" /></div>
+      <div class="arch" data-reveal>
+        <div class="arch__node">
+          <span class="arch__kicker">Cliente</span>
+          <strong>Vue 3 + TypeScript</strong>
+          <span class="arch__meta">Vite · Vue Router · Bootstrap 5</span>
         </div>
-
-        <button class="carousel__btn carousel__btn--prev" id="prevBtn" aria-label="Print anterior">&#8592;</button>
-        <button class="carousel__btn carousel__btn--next" id="nextBtn" aria-label="Próximo print">&#8594;</button>
-
-        <div class="carousel__dots" id="carouselDots" role="tablist" aria-label="Navegar por print"></div>
+        <div class="arch__link"><span>Axios · JWT em cookie</span></div>
+        <div class="arch__node arch__node--core">
+          <span class="arch__kicker">API</span>
+          <strong>Node.js + Express 5</strong>
+          <span class="arch__meta">Rate limit · Auditoria · Logger</span>
+        </div>
+        <div class="arch__link"><span>Migrations · Índices</span></div>
+        <div class="arch__node">
+          <span class="arch__kicker">Dados</span>
+          <strong>MySQL</strong>
+          <span class="arch__meta">Seeds de dev e demo</span>
+        </div>
       </div>
 
-      <!-- Thumbnails -->
-      <div class="thumbs" id="thumbsTrack" role="list" aria-label="Miniaturas dos prints"></div>
+      <div class="arch__side" data-reveal>
+        <div class="pill"><strong>Puppeteer</strong> PDF de contratos</div>
+        <div class="pill"><strong>Cloudinary</strong> Documentos</div>
+        <div class="pill"><strong>ExcelJS</strong> Exportação</div>
+        <div class="pill"><strong>Rotinas agendadas</strong> Notificações</div>
+        <div class="pill"><strong>Railway + Docker</strong> Deploy</div>
+      </div>
     </div>
   </section>
 
-  <!-- ── Tecnologias ── -->
-  <section id="tecnologias" class="section">
+  <!-- ── Stack ── -->
+  <section id="stack" class="section">
     <div class="container">
       <div class="section__head">
-        <h2 class="section__title">Tecnologias Utilizadas</h2>
+        <p class="eyebrow eyebrow--sunset">Stack</p>
+        <h2 class="title">Construído com ferramentas maduras.</h2>
       </div>
-      <div class="techs">
-        <div class="tech" data-reveal>
-          <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" width="56" height="56" loading="lazy" />
-          <span>Node.js</span>
-        </div>
-        <div class="tech" data-reveal>
-          <img src="https://static.cdnlogo.com/logos/m/10/mysql.svg" alt="MySQL" width="56" height="56" loading="lazy" />
-          <span>MySQL</span>
-        </div>
-        <div class="tech" data-reveal>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="56" height="56" loading="lazy" />
-          <span>Vue.js</span>
-        </div>
-        <div class="tech" data-reveal>
-          <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" alt="Bootstrap" width="56" height="56" loading="lazy" />
-          <span>Bootstrap</span>
-        </div>
+
+      <div class="stack">
+        <article class="stack__col" data-reveal>
+          <header class="stack__head">
+            <h3>Front-end</h3>
+            <p>Vue 3 com TypeScript, empacotado com Vite.</p>
+          </header>
+          <dl class="spec">
+            <div><dt>Base</dt><dd>Vue 3 · TypeScript · Vite</dd></div>
+            <div><dt>Rotas</dt><dd>Vue Router</dd></div>
+            <div><dt>Interface</dt><dd>Bootstrap 5 · Bootstrap Icons</dd></div>
+            <div><dt>HTTP</dt><dd>Axios</dd></div>
+            <div><dt>Gráficos</dt><dd>Chart.js via vue-chartjs</dd></div>
+            <div><dt>Calendário</dt><dd>FullCalendar</dd></div>
+            <div><dt>PDF</dt><dd>pdfjs-dist</dd></div>
+            <div><dt>Arrastar e soltar</dt><dd>SortableJS</dd></div>
+            <div><dt>Sanitização</dt><dd>DOMPurify</dd></div>
+            <div><dt>Testes</dt><dd>Vitest · Vue Test Utils · jsdom</dd></div>
+          </dl>
+        </article>
+
+        <article class="stack__col" data-reveal>
+          <header class="stack__head">
+            <h3>Back-end</h3>
+            <p>JavaScript em Node.js, servindo uma API REST.</p>
+          </header>
+          <dl class="spec">
+            <div><dt>Linguagem</dt><dd>JavaScript · Node.js</dd></div>
+            <div><dt>Framework</dt><dd>Express 5</dd></div>
+            <div><dt>Banco</dt><dd>MySQL</dd></div>
+            <div><dt>Autenticação</dt><dd>JWT em cookie · rate limit</dd></div>
+            <div><dt>PDF</dt><dd>Puppeteer</dd></div>
+            <div><dt>Arquivos</dt><dd>Cloudinary</dd></div>
+            <div><dt>Planilhas</dt><dd>ExcelJS</dd></div>
+            <div><dt>Deploy</dt><dd>Railway · Docker</dd></div>
+          </dl>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ── Vídeo ── -->
-  <section id="video" class="section section--alt">
+  <!-- ── CTA final ── -->
+  <section class="section section--tight">
     <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Demonstração Completa</h2>
-        <p class="section__sub">Assista ao sistema em ação.</p>
-      </div>
-      <div class="video-wrap">
-        <video controls preload="none" poster="./src/img/0.png">
-          <source src="./src/Video.mp4" type="video/mp4" />
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
+      <div class="closing" data-reveal>
+        <h2 class="title">Feito para quem vive a temporada.</h2>
+        <p class="lead">Menos planilha, mais controle. Assista à demonstração completa da versão atual.</p>
+        <a href="#evolucao" class="btn btn--primary">Assistir à demo</a>
       </div>
     </div>
   </section>
 
-  <!-- ── Footer ── -->
+  <!-- ── Rodapé ── -->
   <footer class="footer">
-    <div class="container">
-      <p>Desenvolvido por <strong>Lucas Straub</strong> · 2025</p>
-      <p class="footer__sub">Sistema de Gestão de Temporada · Saquarema</p>
+    <div class="container footer__inner">
+      <p>Desenvolvido por <strong>Lucas Straub</strong></p>
+      <p class="muted">SaquaStraub · Gestão de Temporada · Saquarema · 2026</p>
     </div>
   </footer>
 
