@@ -6,9 +6,24 @@ const navToggle = document.getElementById('navToggle');
 const navMenu   = document.getElementById('navMenu');
 const navLinks  = navMenu.querySelectorAll('.nav__link');
 
+// Lê scrollY uma vez por quadro (rAF) e só altera a classe quando o estado muda,
+// evitando ajustes forçados (leitura de layout logo após invalidar estilos).
+let navScrolled = false;
+let scrollTicking = false;
+function updateNavShadow() {
+  scrollTicking = false;
+  const next = window.scrollY > 8;
+  if (next !== navScrolled) {
+    navScrolled = next;
+    navbar.classList.toggle('scrolled', next);
+  }
+}
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 8);
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(updateNavShadow);
 }, { passive: true });
+updateNavShadow();
 
 function setMenu(open) {
   navMenu.classList.toggle('open', open);
