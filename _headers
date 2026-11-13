@@ -5,5 +5,3 @@
   Cache-Control: public, max-age=2592000
 /src/*.mp4
   Cache-Control: public, max-age=2592000
-/main.js
-  Cache-Control: public, max-age=86400
